@@ -206,7 +206,7 @@ function updateBees() {
   let period = document.getElementById("periodTimer").value; //modify this to control refresh period
   //update the timer for the next move
 
-  if (hits.innerHTML >= 100) {
+  if (hits.innerHTML >= 1000) {
     window.alert("Game Over!");
     clearTimer(updateTimer);
   }
