@@ -12,6 +12,9 @@
     </noscript>
     <script>
       var bear;
+      var bees;
+      var updateTimer;
+      var lastStingTime;
     </script>
   </head>
 
@@ -29,10 +32,17 @@
         the refresh period
         <input type="text" id="periodTimer" value="10" size="3" /> ms and the
         bear's speed
-        <input type="text" id="speedBear" value="100" size="3" /> px
+        <input
+          type="text"
+          id="speedBear"
+          value="100"
+          size="3"
+          onchange="bear.setSpeed ()"
+        />
+        px
       </p>
       <h2>Press left, right, up, down keys to move the bear</h2>
-      <button type="button">Start</button>
+      <button type="button" onclick="restart();">Restart</button>
       <button type="button">Add bee</button>
     </div>
 
@@ -43,7 +53,7 @@
             <p>Stings: [<span id="hits">0</span>]</p>
           </td>
           <td>
-            <p>Best duration: [<span id="duration">?</span>]</p>
+            <p>Best duration: [<span id="duration">0</span>]</p>
           </td>
         </tr>
       </table>
